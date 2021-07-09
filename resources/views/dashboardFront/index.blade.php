@@ -63,7 +63,7 @@
       <div class="landing-hero-content">
         <h1 class="landing-hero-title">Vali Admin - A Free Bootstrap 4 Dashboard Template</h1>
         <p class="landing-hero-description">Built with PugJS, SASS, and Bootstrap 4</p>
-        <div><a class="btn btn-primary mr-4" href="dashboard.html">Demo</a><a class="btn btn-primary" href="https://github.com/pratikborsadiya/vali-admin" target="_blank" rel="noopener">GitHub</a></div><img class="landing-hero-banner" src="images/banner.jpg">
+        <div><a class="btn btn-primary mr-4" href="dashboard.blade.php">Demo</a><a class="btn btn-primary" href="https://github.com/pratikborsadiya/vali-admin" target="_blank" rel="noopener">GitHub</a></div><img class="landing-hero-banner" src="images/banner.jpg">
       </div>
     </section>
     <section class="features">
@@ -121,4 +121,4 @@
     </section>
     <footer class="landing-footer">Created by <b>Pratik Borsadiya</b> & <a href="https://github.com/pratikborsadiya/vali-admin/graphs/contributors" target="_blank" rel="noopener">contributors</a></footer>
   </body>
-</html>
+</blade.php>
