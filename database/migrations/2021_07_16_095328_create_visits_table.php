@@ -1,0 +1,37 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateVisitsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('visits', function (Blueprint $table) {
+            $table->id();
+            $table->text('descriptin');
+            $table->foreignId('spec_id')->constrained('specilties', 'id');
+            $table->foreignId('doctor_id')->constrained('doctors', 'id');
+            $table->foreignId('pat_id')->constrained('patients', 'patient_id');
+            $table->foreignId('appo_id')->constrained('appointments', 'id');
+            $table->timestamps();
+
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('visits');
+    }
+}

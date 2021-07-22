@@ -1,0 +1,116 @@
+﻿Administration  Admin, appoinments, Doctor, specializations,Patients  
+
+
+>Admin    [ID(PK), Name, Email, Password, Center_name, Center_address, Center_contact_no, Center_logo ...]
+  
+
+>Login    [Admin ?? Doctor ?? patient]
+
+
+//prefix => patient.
+>Patient  [ID(PK), SSN(PK), name, gender, age, email, phone_no, visit_id(FK) ...]
+
+
+//prefix => visit.
+>Visit    [ID(PK), spec_id(FK), patient_id(FK), doctor_id(FK), description, date, appo_id(FK), ...]
+
+//prefix => appo.
+>oppoinments  [ID(PK), started_at, end_at,  ...]
+
+
+//prefix =>spec.
+>specialty  [ID(PK), name ...]
+
+
+//prefix => doctor.
+>Doctor  [ID(PK), email, password, name, profile_img, phone_no, gender, address, age, spec_id(FK), start_time, end_time, price, status ...]
+
+
+visits
+ $table->id();
+            $table->text('descriptin')->nullable();
+            $table->foreignId('spec_id')->constrained('specialties', 'id')->nullOnDelete();
+            $table->foreignId('doctor_id')->constrained('doctors', 'id')->nullOnDelete();
+            $table->foreignId('patient_id')->constrained('patients', 'id')->nullOnDelete();
+            $table->foreignId('appo_id')->constrained('appointments', 'id')->nullOnDelete();
+            $table->timestamps();
+
+
+
+
+
+
+appointments
+ $table->id();
+            $table->time('started_at');
+            $table->time('finished_at');
+            $table->timestamps()
+
+
+
+doctors
+$table->id();
+            $table->String('name');
+            $table->String('password');
+            $table->String('email');
+            $table->enum('gender',['male','female']);
+            $table->integer('phone');
+            $table->integer('age');
+            $table->String('address');
+            $table->time('start_time');
+            $table->time('end_time');
+            $table->integer('price');
+            $table->foreignId('specility_id')->constrained('specialties','id')->cascadeOnDelete();
+            $table->foreignId('appoinment_id')->constrained('appointments','id')->cascadeOnDelete();
+            $table->timestamps();
+
+patients
+ $table->id('p_id')->primary()->constrained('users','id')->cascadeOnDelete();
+           
+            $table->string('name');
+            $table->String('email');
+            $table->String('password');
+            $table->integer('phone');
+            $table->integer('age');
+            $table->foreignId('visit_id')->constrained('visits','id')->nullOnDelete();
+
+            $table->timestamps();
+
+
+
+
+ $table->id();
+            $table->string('name');
+            $table->string('password');
+            $table->string('email');
+            $table->enum('gender',['male','female']);
+            $table->integer('phone');
+            $table->integer('age');
+            $table->string('address');
+            $table->time('start_time');
+            $table->time('end_time');
+            $table->integer('price');
+            $table->enum('status', ['active', 'inactive']);
+            $table->unsignedBigInteger('specility_id')->nullable();
+            $table->foreign('specility_id')->references('id')->on('specialties')->onDelete('set null');
+            //$table->foreignId('specility_id')->nullable()->constrained('specialties','id')->nullOnDelete();
+           
+            //$table->foreignId('appoinment_id')->constrained('appointments')->cascadeOnDelete();
+            $table->timestamps();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

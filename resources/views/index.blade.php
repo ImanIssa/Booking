@@ -17,14 +17,14 @@ http://www.tooplate.com/view/2098-health
      <meta name="author" content="Tooplate">
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
-     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
-     <link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}">
-     <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
+     <link rel="stylesheet" href="{{asset('theme/css/bootstrap.min.css')}}">
+     <link rel="stylesheet" href="{{asset('theme/css/font-awesome.min.css')}}">
+     <link rel="stylesheet" href="{{asset('theme/css/animate.css')}}">
+     <link rel="stylesheet" href="{{asset('theme/css/owl.carousel.css')}}">
+     <link rel="stylesheet" href="{{asset('theme/css/owl.theme.default.min.css')}}">
 
      <!-- MAIN CSS -->
-  <link rel="stylesheet" href="{{asset('css/tooplate-style.css')}}">
+  <link rel="stylesheet" href="{{asset('theme/css/tooplate-style.css')}}">
 <!-- CSS only -->
 <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
 
@@ -147,7 +147,7 @@ http://www.tooplate.com/view/2098-health
                                    <p>Sed a dignissim lacus. Quisque fermentum est non orci commodo, a luctus urna mattis. Ut placerat, diam a tempus vehicula.</p>
                               </div>
                               <figure class="profile wow fadeInUp" data-wow-delay="1s">
-                                   <img src="{{asset('images/author-image.jpg')}}" class="img-responsive" alt="">
+                                   <img src="{{asset('theme/images/author-image.jpg')}}" class="img-responsive" alt="">
                                    <figcaption>
                                         <h3>Dr. Neil Jackson</h3>
                                         <p>General Principal</p>
@@ -176,7 +176,7 @@ http://www.tooplate.com/view/2098-health
 
                     <div class="col-md-4 col-sm-6">
                          <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
-                              <img src="{{asset('images/team-image1.jpg')}}" class="img-responsive" alt="">
+                              <img src="{{asset('theme/images/team-image1.jpg')}}" class="img-responsive" alt="">
 
                                    <div class="team-info">
                                         <h3>Nate Baston</h3>
@@ -196,7 +196,7 @@ http://www.tooplate.com/view/2098-health
 
                     <div class="col-md-4 col-sm-6">
                          <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
-                              <img src="{{asset('images/team-image2.jpg')}}" class="img-responsive" alt="">
+                              <img src="{{asset('theme/images/team-image2.jpg')}}" class="img-responsive" alt="">
 
                                    <div class="team-info">
                                         <h3>Jason Stewart</h3>
@@ -217,7 +217,7 @@ http://www.tooplate.com/view/2098-health
 
                     <div class="col-md-4 col-sm-6">
                          <div class="team-thumb wow fadeInUp" data-wow-delay="0.6s">
-                              <img src="{{asset('images/team-image3.jpg')}}" class="img-responsive" alt="">
+                              <img src="{{asset('theme/images/team-image3.jpg')}}" class="img-responsive" alt="">
 
                                    <div class="team-info">
                                         <h3>Miasha Nakahara</h3>
@@ -256,14 +256,14 @@ http://www.tooplate.com/view/2098-health
                          <!-- NEWS THUMB -->
                          <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
                               <a href="news-detail.html">
-                                   <img src="{{asset('images/news-image1.jpg')}}" class="img-responsive" alt="">
+                                   <img src="{{asset('theme/images/news-image1.jpg')}}" class="img-responsive" alt="">
                               </a>
                               <div class="news-info">
                                    <span>March 08, 2018</span>
                                    <h3><a href="news-detail.html">About Amazing Technology</a></h3>
                                    <p>Maecenas risus neque, placerat volutpat tempor ut, vehicula et felis.</p>
                                    <div class="author">
-                                        <img src="{{asset('images/author-image.jpg')}}" class="img-responsive" alt="">
+                                        <img src="{{asset('theme/images/author-image.jpg')}}" class="img-responsive" alt="">
                                         <div class="author-info">
                                              <h5>Jeremie Carlson</h5>
                                              <p>CEO / Founder</p>
@@ -277,14 +277,14 @@ http://www.tooplate.com/view/2098-health
                          <!-- NEWS THUMB -->
                          <div class="news-thumb wow fadeInUp" data-wow-delay="0.6s">
                               <a href="news-detail.html">
-                                   <img src="{{asset('images/news-image2.jpg')}}" class="img-responsive" alt="">
+                                   <img src="{{asset('theme/images/news-image2.jpg')}}" class="img-responsive" alt="">
                               </a>
                               <div class="news-info">
                                    <span>February 20, 2018</span>
                                    <h3><a href="news-detail.html">Introducing a new healing process</a></h3>
                                    <p>Fusce vel sem finibus, rhoncus massa non, aliquam velit. Nam et est ligula.</p>
                                    <div class="author">
-                                        <img src="{{asset('images/author-image.jpg')}}" class="img-responsive" alt="">
+                                        <img src="{{asset('theme/images/author-image.jpg')}}" class="img-responsive" alt="">
                                         <div class="author-info">
                                              <h5>Jason Stewart</h5>
                                              <p>General Director</p>
@@ -298,14 +298,14 @@ http://www.tooplate.com/view/2098-health
                          <!-- NEWS THUMB -->
                          <div class="news-thumb wow fadeInUp" data-wow-delay="0.8s">
                               <a href="news-detail.html">
-                                   <img src="{{asset('images/news-image3.jpg')}}" class="img-responsive" alt="">
+                                   <img src="{{asset('theme/images/news-image3.jpg')}}" class="img-responsive" alt="">
                               </a>
                               <div class="news-info">
                                    <span>January 27, 2018</span>
                                    <h3><a href="news-detail.html">Review Annual Medical Research</a></h3>
                                    <p>Vivamus non nulla semper diam cursus maximus. Pellentesque dignissim.</p>
                                    <div class="author">
-                                        <img src="{{asset('images/author-image.jpg')}}" class="img-responsive" alt="">
+                                        <img src="{{asset('theme/images/author-image.jpg')}}" class="img-responsive" alt="">
                                         <div class="author-info">
                                              <h5>Andrio Abero</h5>
                                              <p>Online Advertising</p>
@@ -326,7 +326,7 @@ http://www.tooplate.com/view/2098-health
                <div class="row">
 
                     <div class="col-md-6 col-sm-6">
-                         <img src="{{asset('images/appointment-image.jpg')}}" class="img-responsive" alt="">
+                         <img src="{{asset('theme/images/appointment-image.jpg')}}" class="img-responsive" alt="">
                     </div>
 
                     <div class="col-md-6 col-sm-6">
@@ -480,14 +480,14 @@ http://www.tooplate.com/view/2098-health
 
      <!-- SCRIPTS -->
      
-     <script src="{{asset('js/jquery.js')}}"></script>
-     <script src="{{asset('js/bootstrap.min.js')}}"></script>
-     <script src="{{asset('js/jquery.sticky.js')}}"></script>
-     <script src="{{asset('js/jquery.stellar.min.js')}}"></script>
-     <script src="{{asset('js/wow.min.js')}}"></script>
-     <script src="{{asset('js/smoothscroll.js')}}"></script>
-     <script src="{{asset('js/owl.carousel.min.js')}}"></script>
-     <script src="{{asset('js/custom.js')}}"></script>
+     <script src="{{asset('theme/js/jquery.js')}}"></script>
+     <script src="{{asset('theme/js/bootstrap.min.js')}}"></script>
+     <script src="{{asset('theme/js/jquery.sticky.js')}}"></script>
+     <script src="{{asset('theme/js/jquery.stellar.min.js')}}"></script>
+     <script src="{{asset('theme/js/wow.min.js')}}"></script>
+     <script src="{{asset('theme/js/smoothscroll.js')}}"></script>
+     <script src="{{asset('theme/js/owl.carousel.min.js')}}"></script>
+     <script src="{{asset('theme/js/custom.js')}}"></script>
 
 </body>
 </html>
