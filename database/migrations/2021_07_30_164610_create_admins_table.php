@@ -18,7 +18,6 @@ class CreateAdminsTable extends Migration
             $table->foreignId('user_id')->constrained('users', 'id')->cascadeOnDelete();
             $table->string('name');
             $table->String('email');
-            //$table->String('password');
             $table->string('center_name');
             $table->string('center_address');
             $table->string('address');

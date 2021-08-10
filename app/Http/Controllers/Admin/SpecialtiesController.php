@@ -19,8 +19,10 @@ class SpecialtiesController extends Controller
     public function index()
     {
         
-        $spec = Speciality::orderBy('id', 'DESC')->get();
-        return view ('Specialties.create' , compact('spec'));
+        $spec = Speciality::all();
+        return view ('Specialties.index' , [
+            'spec'=>$spec,
+        ]);
       
     }
 
@@ -31,9 +33,10 @@ class SpecialtiesController extends Controller
      */
     public function create()
     {   
-        $spec = Speciality::orderBy('id', 'DESC')->get();
-        return view('Specialties.create' , compact('spec'));
-        dd($spec);
+       
+
+        return view('Specialties.create');
+      
     }
 
     /**
@@ -44,11 +47,21 @@ class SpecialtiesController extends Controller
      */
     public function store(Request $request)
     {
+         
+        $validator = $request->validate(  
+            [
+                'name'=> 'required ',
+               
+            ] 
+            ) ;
         $spec = new Speciality();
         $spec->name = $request->post('name');
+      
         $spec->save();
-dd($spec);
-        return response()->json($spec);
+        //dd($spec);
+
+   return redirect('/SpecRead' );
+       
     }
 
     /**
@@ -93,6 +106,8 @@ dd($spec);
      */
     public function destroy($id)
     {
-        //
+        $spec = Speciality::destroy($id);
+       
+        return redirect('/SpecRead' );
     }
 }

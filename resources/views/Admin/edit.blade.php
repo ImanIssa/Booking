@@ -1,6 +1,6 @@
 @extends('layouts/dashlayout');
 @section('doc')
-<form action="/AdminEdit/<?= $user_id ?>"  method='post' enctype="multipart/form-data">
+<form action=""  method='post' enctype="multipart/form-data">
 
 @csrf
 <input type= "hidden" name="_method"  value = "put">
@@ -15,7 +15,7 @@
                       <p class="text-secondary mb-1">Full Stack Developer</p>
                       
                       
-                      <button class="btn btn-outline-primary" href= "/AdminEdit">Edit</button>
+                    
                     </div>
                   </div>
                 </div>
@@ -33,14 +33,16 @@
   @foreach($admin as $admin)  
   <tr>
       <th scope="col">Name</th>
-      <th scope="col"><input type="text" class="form-control" placeholder="Enter your name" name = "name" value="<?= $admin->name ?>" >
+      <th scope="col"><input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Enter your name" name = "name" value="<?= $admin->name ?>" >
       <p class ="invalid-feedback ">
            @error('name') 
            {{ $message }} 
            @enderror 
          </p></th>
      
-    </tr>
+</tr>
+     
+   
     <tr>
       <th scope="row">E-mail</th>
       <td><input type="email" class="form-control" placeholder="Enter your email" name = "email"  value="<?= $admin->email ?>"> 
@@ -55,7 +57,7 @@
 
     <tr>
       <th scope="row">Phone</th>
-      <td><input type="text"  class="form-control"  placeholder="Enter your number"  name="phone"   value="<?= $admin->phone ?>">
+      <td><input type="text"  class="form-control @error('phone') is-invalid @enderror"  placeholder="Enter your number"  name="phone"   value="<?= $admin->phone ?>">
       <p class ="invalid-feedback ">
            @error('phone') 
            {{ $message }} 
@@ -66,7 +68,7 @@
 
     <tr>
       <th scope="row">Address</th>
-      <td><input type="text"  class="form-control"  placeholder="Enter your address" name="address"  value="<?= $admin->address ?>" >
+      <td><input type="text"  class="form-control @error('address') is-invalid @enderror"  placeholder="Enter your address" name="address"  value="<?= $admin->address ?>" >
       <p class ="invalid-feedback ">
           @error('address') 
          {{ $message }} 
@@ -76,7 +78,7 @@
     </tr>
     <tr>
       <th scope="row">Center Name</th>
-      <td><input type="text"  class="form-control"  placeholder="Enter the center name"  name="center_name"   value="<?= $admin->center_name ?>">
+      <td><input type="text"  class="form-control @error('center_name') is-invalid @enderror"  placeholder="Enter the center name"  name="center_name"   value="<?= $admin->center_name ?>">
       <p class ="invalid-feedback ">
          @error('center_name') 
          {{ $message }} 
@@ -87,7 +89,7 @@
     <tr>
       <th scope="row">Image</th>
       <td>
-     <input type="file" id="myFile" name="filename">
+     <input type="file" id="myFile" name="image_path">
      <img src = {{asset('storage/' . $admin->image_path)}}> 
      <p class ="invalid-feedback ">
          @error('image_path') 
@@ -101,7 +103,7 @@
   
     <tr>
       <th scope="row">Center address</th>
-      <td><input type="text"  class="form-control"  placeholder="Enter the center address"  name="center_address"  value="<?= $admin->center_address?>" >
+      <td><input type="text"  class="form-control @error('center_address') is-invalid @enderror"  placeholder="Enter the center address"  name="center_address"  value="<?= $admin->center_address?>" >
       <p class ="invalid-feedback ">
          @error('center_address') 
          {{ $message }} 
@@ -112,7 +114,7 @@
     <tr>
       <th scope="row">Center Contact  </th>
     
-     <td> <input type="text" class="form-control" placeholder="Enter contact number" name = "center_contact_no"   value="<?= $admin->center_contact_no ?> ">
+     <td> <input type="text" class="form-control  @error('center_contact_no') is-invalid @enderror" placeholder="Enter contact number" name = "center_contact_no"   value="<?= $admin->center_contact_no ?> ">
      <p class ="invalid-feedback ">
         @error('center_contact_no') 
          {{ $message }} 
@@ -123,8 +125,8 @@
     
      
     </tr>
-
-    <tr> <th> <td><button class="btn btn-outline-primary" type=submit  >Update</button></th></td></tr>
+    <tr><td> <input type="submit"  class="btn btn-outline-primary" formaction="/AdminEdit/<?= $admin->user_id ?>" value="Update"></td></tr>
+ 
    @endforeach 
   </tbody>
 </table>

@@ -15,8 +15,11 @@ class CreateAppointmentsTable extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
-            $table->time('started_at');
-            $table->time('finished_at');
+            $table->time('appointment');
+            $table->foreignId('doctors_id')->constrained('doctors','id');
+            $table->date('date');
+            $table->enum('day',['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday' ]);
+            $table->enum('status' , ['Booked', 'Unbooked'])->default('Unbooked');
             $table->timestamps();
         });
     }

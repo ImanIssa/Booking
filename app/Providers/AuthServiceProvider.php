@@ -25,6 +25,9 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+       Gate::define('doctor.create' , function($user){
+           return false ;
+       });
     }
+    
 }

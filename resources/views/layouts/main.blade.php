@@ -17,14 +17,14 @@ http://www.tooplate.com/view/2098-health
      <meta name="author" content="Tooplate">
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
-     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
-     <link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}">
-     <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
+     <link rel="stylesheet" href="{{asset('theme/css/bootstrap.min.css')}}">
+     <link rel="stylesheet" href="{{asset('theme/css/font-awesome.min.css')}}">
+     <link rel="stylesheet" href="{{asset('theme/css/animate.css')}}">
+     <link rel="stylesheet" href="{{asset('theme/css/owl.carousel.css')}}">
+     <link rel="stylesheet" href="{{asset('theme/css/owl.theme.default.min.css')}}">
 
      <!-- MAIN CSS -->
-  <link rel="stylesheet" href="{{asset('css/tooplate-style.css')}}">
+  <link rel="stylesheet" href="{{asset('theme/css/tooplate-style.css')}}">
 <!-- CSS only -->
 <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
 
@@ -90,6 +90,9 @@ http://www.tooplate.com/view/2098-health
 
           </div>
      </section>
+   
+     @yield('website')
+
 
     
      <!-- FOOTER -->
@@ -114,7 +117,7 @@ http://www.tooplate.com/view/2098-health
                               <h4 class="wow fadeInUp" data-wow-delay="0.4s">Latest News</h4>
                               <div class="latest-stories">
                                    <div class="stories-image">
-                                        <a href="#"><img src="{{asset('images/news-image.jpg')}}" class="img-responsive" alt=""></a>
+                                        <a href="#"><img src="{{asset('theme/images/news-image.jpg')}}" class="img-responsive" alt=""></a>
                                    </div>
                                    <div class="stories-info">
                                         <a href="#"><h5>Amazing Technology</h5></a>
@@ -124,7 +127,7 @@ http://www.tooplate.com/view/2098-health
 
                               <div class="latest-stories">
                                    <div class="stories-image">
-                                        <a href="#"><img src="{{asset('images/news-image.jpg')}}" class="img-responsive" alt=""></a>
+                                        <a href="#"><img src="{{asset('theme/images/news-image.jpg')}}" class="img-responsive" alt=""></a>
                                    </div>
                                    <div class="stories-info">
                                         <a href="#"><h5>New Healing Process</h5></a>
@@ -180,14 +183,14 @@ http://www.tooplate.com/view/2098-health
 
      <!-- SCRIPTS -->
      
-     <script src="{{asset('js/jquery.js')}}"></script>
-     <script src="{{asset('js/bootstrap.min.js')}}"></script>
-     <script src="{{asset('js/jquery.sticky.js')}}"></script>
-     <script src="{{asset('js/jquery.stellar.min.js')}}"></script>
-     <script src="{{asset('js/wow.min.js')}}"></script>
-     <script src="{{asset('js/smoothscroll.js')}}"></script>
-     <script src="{{asset('js/owl.carousel.min.js')}}"></script>
-     <script src="{{asset('js/custom.js')}}"></script>
+     <script src="{{asset('theme/js/jquery.js')}}"></script>
+     <script src="{{asset('theme/js/bootstrap.min.js')}}"></script>
+     <script src="{{asset('theme/js/jquery.sticky.js')}}"></script>
+     <script src="{{asset('theme/js/jquery.stellar.min.js')}}"></script>
+     <script src="{{asset('theme/js/wow.min.js')}}"></script>
+     <script src="{{asset('theme/js/smoothscroll.js')}}"></script>
+     <script src="{{asset('theme/js/owl.carousel.min.js')}}"></script>
+     <script src="{{asset('theme/js/custom.js')}}"></script>
 
 </body>
 </html>

@@ -15,10 +15,8 @@ class CreateVisitsTable extends Migration
     {
         Schema::create('visits', function (Blueprint $table) {
             $table->id();
-            $table->text('descriptin');
-            $table->foreignId('spec_id')->constrained('specilties', 'id');
             $table->foreignId('doctor_id')->constrained('doctors', 'id');
-            $table->foreignId('pat_id')->constrained('patients', 'patient_id');
+            $table->foreignId('patient_id')->constrained('patients', 'id');
             $table->foreignId('appo_id')->constrained('appointments', 'id');
             $table->timestamps();
 

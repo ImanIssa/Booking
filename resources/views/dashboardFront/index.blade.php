@@ -193,6 +193,7 @@
 
         <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-file" aria-hidden="true"></i></i><span class="app-menu__label">Specialties</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
+        
             <li><a class="treeview-item" href="dashboardFront/bootstrap-components.blade.php"><i class="icon fa fa-circle-o"></i>Profile</a></li>
             <li><a class="treeview-item" href="https://fontawesome.com/v4.7.0/icons/" target="_blank" rel="noopener"><i class="icon fa fa-circle-o"></i> Font Icons</a></li>
             <li><a class="treeview-item" href="dashboardFront/ui-cards.blade.php"><i class="icon fa fa-circle-o"></i> Cards</a></li>

@@ -162,13 +162,14 @@ sup {
 }
 
 a {
-  color: #009688;
+  color: black;
   text-decoration: none;
   background-color: transparent;
+  font-weight: bold;
 }
 
 a:hover {
-  color: #004a43;
+  color: #a5c422;
   text-decoration: underline;
 }
 
@@ -7028,6 +7029,7 @@ button.bg-danger:focus {
 .bg-light {
   background-color: #f8f9fa !important;
 }
+
 
 a.bg-light:hover, a.bg-light:focus,
 button.bg-light:hover,
@@ -16787,4 +16789,8 @@ body{
 }
 .shadow-none {
     box-shadow: none!important;
+}
+
+p.a {
+  font-style: italic;
 }

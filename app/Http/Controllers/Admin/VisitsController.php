@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Appointment;
+use App\Models\Doctor;
+use App\Models\Patient;
+use App\Models\Visit;
 use Illuminate\Http\Request;
 
 class VisitsController extends Controller
@@ -14,7 +18,11 @@ class VisitsController extends Controller
      */
     public function index()
     {
-        //
+        $doctors = Doctor::all();
+       return view ('visits.create' ,[
+        'doctors'=>$doctors,
+        ]
+    );
     }
 
     /**
@@ -23,8 +31,14 @@ class VisitsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {    $doctors = Doctor::all();
+       //$app = Appointment::all();
+        //$patient = Patient::all();
+        return view ('visits.create' ,[
+            'doctors'=>$doctors,
+            'app'=>$app ,
+            'patient'=>$patient,
+        ]);
     }
 
     /**
@@ -33,9 +47,21 @@ class VisitsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request )
+    { $visit = new Visit();
+      //  dd($visit);
+   //   $patient = Patient::findOrFail($id) ;
+      $visit->doctor_id = $request->post('doctor_id');
+      $visit->appo_id= $request->post('appo_id');
+      $visit->patient_id= $request->post('patient_id');
+
+     /*$appointment = Appointment::find($request->post('appo_id'));
+      $appointment->state = 'Booked';
+      $appointment->save();*/
+  //    $visit = Patient::find($visit->patient_id)->patient()->get();
+   //dd($visit);
+      $visit->save();
+     // return redirect();
     }
 
     /**

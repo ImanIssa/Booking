@@ -4,6 +4,11 @@ namespace App\Http\Controllers\Doctor;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Appointment;
+use App\Models\Doctor;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use DB;
 
 class AppointmentsController extends Controller
 {
@@ -13,8 +18,12 @@ class AppointmentsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {  
+          $app = Appointment::all();
+        return view('Appointments.index' , [
+            'app'=>$app,
+        ]);
+      
     }
 
     /**
@@ -23,8 +32,10 @@ class AppointmentsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {   $doctors = Doctor::all();
+        return view('Appointments.create' ,[
+            'doctor'=>$doctors,
+        ]);
     }
 
     /**
@@ -35,7 +46,19 @@ class AppointmentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $app = new Appointment();
+        $app->id = $request->post('id');
+        $app->appointment = $request->post('appointment');
+        $app->doctors_id= $request->post('doctors_id');
+        $app->date = $request->post('date');
+        $app->Day = $request->post('Day');
+        $app->status = $request->post('status');
+        
+        $app->save();
+        //dd($spec);
+
+   return redirect('/AppRead' );
+       
     }
 
     /**
@@ -80,6 +103,8 @@ class AppointmentsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $app = Appointment::destroy($id);
+       
+        return redirect('/AppRead' );
     }
 }

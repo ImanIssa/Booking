@@ -18,7 +18,11 @@ class AdminController extends Controller
      */
     public function index()
     { 
+       /* if (Auth::user()->type == 'Admin') {
+
+        }*/
         $admin = Admin::all();
+        
         return view ('Admin.index' , [
             'admin'=>$admin,
         ]);
@@ -31,7 +35,11 @@ class AdminController extends Controller
      */
     public function create()
     {
-       
+      /* if (Gate::allow('doctor.create')){
+           abort(403);
+       }*/
+
+   
     return view ('Admin/create');
        
     }
@@ -44,6 +52,9 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
+        /*if (Gate::allow('doctor.create')){
+            abort(403);
+        }*/
        
         $validator = $request->validate(  
         [
@@ -61,10 +72,15 @@ class AdminController extends Controller
       /*  $results = $validator->fails();
         $val=$validator->failed();
         $errors = $validator->errors();*/
-        
+
+
+        //$admin =   DB::table('users')->where('type', 'admin')->limit(1)->get();
+      //  dd($admin);
+
         $admin = new Admin();
         $admin->user_id = Auth::user()->id;
         $admin->name = $request->post('name');
+       
         $admin->phone = $request->post('phone');
         $admin->address = $request->post('address');
         $admin->center_contact_no = $request->post('center_contact_no');
@@ -107,7 +123,7 @@ class AdminController extends Controller
      */
     public function edit($user_id)
     {  
-       
+      
       
     $admin = Admin::where('user_id' , '=' , $user_id)->get();
        return view ('Admin.edit' ,
@@ -117,6 +133,8 @@ class AdminController extends Controller
             'admin' => $admin , 
         ]
         );
+      
+     
     }
 
     /**
@@ -127,9 +145,9 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $user_id)
-{
+{    
     
-    $validator = $request->validate(  
+ $validator = $request->validate(  
         [
             'name'=>              'required | string | max:255',
             'image_path'=>        'required | file   | dimensions: max_width:300,min_width:300' ,
@@ -141,15 +159,16 @@ class AdminController extends Controller
             'center_name'=>       'required ',
         ] 
         ) ;
-        $errors = $validator->errors();
-        dd(errors);
-        
+      /*  $errors = $validator->errors();
+        dd(errors);*/
+    
      $admin = Admin::where('user_id' , '=' , $user_id)->first();
     
       //  $admin = DB::table('admins')->where('user_id', $user_id)->get();
     
         $admin->user_id = Auth::user()->id;
         $admin->name = $request->post('name');
+      
         $admin->phone = $request->post('phone');
         $admin->address = $request->post('address');
         $admin->center_contact_no = $request->post('center_contact_no');
@@ -162,9 +181,9 @@ class AdminController extends Controller
             $file = $request->file('image_path');
             $admin['image_path'] = $file->store('/images' , 'public');}
 
-     
+    // dd($admin);
         $admin->save();
-       
+      
 
         return redirect('/AdminRead');
 

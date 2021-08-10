@@ -4,37 +4,57 @@
 
 
 <body>
-<a href ="" class="btn btn-outline-primary " data-toggle="modal" data-target="#SpecModal" >Add Speciality</a>
+<form action="/SpecCreate" method = 'post' class="form-inline">
+@csrf
+   <div class="col-md-6">
 
-<div class="col-md-12">  
+   <button class="btn btn-outline-primary " type= submit name="button1">Add Speciality</button>
+<input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Enter Here" name = "name"   >
 
-<table  id = "SpecTable"class="table">
- 
-<thead class="thead-dark">
- 
-<th scope="col">ID</th>
-<th scope="col">Name</th>
+         <p class ="invalid-feedback ">
+           @error('name') 
+           {{ $message }} 
+           @enderror 
+         </p>
 
-</thead>
-<tbody>
-   @foreach($spec as $spec)
-<tr>
-      
-      
-      <td>{{$spec->id}} </td>
-      <td> {{$spec->name}}</td>
- </tr>
+</div>
+<br>
+</form>
 
 
-
-
-@endforeach
- </tbody>
-</table>
 </div>
 
 
+
+
+ </body>
+ 
+@endsection 
+
+<!-- <input type="submit"  class="btn btn-outline-primary"  value="Create" name = "button1">-->
+<!--<button class="btn btn-outline-primary " type= submit name="button1">Creat</button>--
+<tr>
+      <th scope="row">Name</th>
+      <td><input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Enter the speciality name" name = "center_name"   value="{{old('center_name')}}" >
+    
+      <p class ="invalid-feedback ">
+         @error('center_name') 
+         {{ $message }} 
+         @enderror 
+      </p>
+      </td>
+      <td>
+      <button class="btn btn-outline-primary " type= submit>Create</button>
+       
+      
+      </td>
+      
+ </tr>-->
+
+
+
 <!-- Modal -->
+<!--
 <div class="modal fade" id="specModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -45,10 +65,10 @@
         </button>
       </div>
       <div class="modal-body">
-      <form id="SpecForm"  method='get' enctype="multipart/form-data">
+      <form id="SpecForm"  >
     @csrf
     <div> 
-    <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Add Here" name = "name"  value="{{old('name' )}}" >
+    <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Add Here" name = "name"  >
          <p class ="invalid-feedback ">
            @error('name') 
            {{ $message }} 
@@ -91,27 +111,4 @@
          }
       })
    });
-</script>
-   </body>
- 
-@endsection 
-
-<!-- <input type="submit"  class="btn btn-outline-primary"  value="Create" name = "button1">-->
-<!--<button class="btn btn-outline-primary " type= submit name="button1">Creat</button>--
-<tr>
-      <th scope="row">Name</th>
-      <td><input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Enter the speciality name" name = "center_name"   value="{{old('center_name')}}" >
-    
-      <p class ="invalid-feedback ">
-         @error('center_name') 
-         {{ $message }} 
-         @enderror 
-      </p>
-      </td>
-      <td>
-      <button class="btn btn-outline-primary " type= submit>Create</button>
-       
-      
-      </td>
-      
- </tr>-->
+</script>-->

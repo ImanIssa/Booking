@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\Doctor;
 
 use App\Http\Controllers\Controller;
+use App\Models\Speciality;
+use App\Models\Patient;
+use App\Models\Appointment;
+use App\Models\Doctor;
 use Illuminate\Http\Request;
 
 class PatientsController extends Controller
@@ -13,8 +17,10 @@ class PatientsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    { /* $d = Doctor::all();
+        return view('index' , [
+            'd'=>$d,
+        ]);*/
     }
 
     /**
@@ -24,7 +30,12 @@ class PatientsController extends Controller
      */
     public function create()
     {
-        //
+        $pat = Patient::all();
+       return view('index' , [
+           'pat'=>$pat,
+           'spec'=>Speciality::all() ,
+       ]);  
+    
     }
 
     /**
@@ -33,9 +44,29 @@ class PatientsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request )
+    { 
+      
+        $pat          = new Patient();
+        $pat->name    = $request->post('name');
+        $pat->email   = $request->post('email');
+        $pat->phone   = $request->post('phone');
+        $pat->message = $request->post('message');
+        $pat->spec_id = $request->post('spec_id');
+    
+        $pat->date    = $request->post('date');
+        $pat->save();
+
+       $app = Appointment::all();
+       $doctors = Speciality::find($pat->spec_id)->doctor()->get();
+     //  dd($doctors);
+        return view ('visits.create' ,[
+            'doctors'=>$doctors,
+            'app'=>$app ,
+            'patient'=>$pat,
+        ]);
+
+      //  return view('visits.create');
     }
 
     /**

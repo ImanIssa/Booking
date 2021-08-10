@@ -331,18 +331,21 @@ http://www.tooplate.com/view/2098-health
 
                     <div class="col-md-6 col-sm-6">
                          <!-- CONTACT FORM HERE -->
-                         <form id="appointment-form" role="form" method="post" action="#">
-
+                         <form id="appointment-form" role="form" method="post" action="/PatientsCreate">
+                         @csrf
                               <!-- SECTION TITLE -->
+                           
                               <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
                                    <h2>Make an appointment</h2>
                               </div>
-
+                           
                               <div class="wow fadeInUp" data-wow-delay="0.8s">
                                    <div class="col-md-6 col-sm-6">
                                         <label for="name">Name</label>
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name">
+                                       <input type="text" class="form-control" id="name" name="name" placeholder="Full Name">
                                    </div>
+
+                                  
 
                                    <div class="col-md-6 col-sm-6">
                                         <label for="email">Email</label>
@@ -355,12 +358,16 @@ http://www.tooplate.com/view/2098-health
                                    </div>
 
                                    <div class="col-md-6 col-sm-6">
-                                        <label for="select">Select Department</label>
-                                        <select class="form-control">
-                                             <option>General Health</option>
-                                             <option>Cardiology</option>
-                                             <option>Dental</option>
-                                             <option>Medical Research</option>
+                                        <label for="select">Select Specility</label>
+                                        <select class="form-control" name = "spec_id" >
+                                        <option value=""></option>
+                                         @foreach($spec as $spec)
+                                        <option value="<?= $spec->id?>"  > <?= $spec->name?> </option>
+                                        @endforeach
+                                        @error('speciality_id') 
+                                           {{ $message }} 
+                                        @enderror 
+      
                                         </select>
                                    </div>
 
@@ -369,9 +376,11 @@ http://www.tooplate.com/view/2098-health
                                         <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone">
                                         <label for="Message">Additional Message</label>
                                         <textarea class="form-control" rows="5" id="message" name="message" placeholder="Message"></textarea>
-                                        <button type="submit" class="form-control" id="cf-submit" name="submit">Submit Button</button>
+                                        <button type="submit" class="form-control" id="cf-submit" name="submit">See Doctors</button>
                                    </div>
+                                 
                               </div>
+                             
                         </form>
                     </div>
 

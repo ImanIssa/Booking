@@ -16,7 +16,7 @@ class CreateDoctorsTable extends Migration
         Schema::create('doctors', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('password');
+          
             $table->string('email');
             $table->enum('gender',['male','female']);
             $table->integer('phone');
@@ -25,9 +25,8 @@ class CreateDoctorsTable extends Migration
             $table->time('start_time');
             $table->time('end_time');
             $table->integer('price');
-   
-          $table->foreignId('specility_id')->constrained('specilties','id');
-           $table->foreignId('appoinment_id')->constrained('appointments','id');
+            $table->string('image');
+            $table->foreignId('specility_id')->constrained('specilties','id');
             $table->timestamps();
         });
     }

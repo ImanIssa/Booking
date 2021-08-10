@@ -104,7 +104,7 @@
     <!-- Sidebar menu-->
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
-      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://affiliatedderm.com/wp-content/uploads/2019/06/Affiliated-Dermatologists_GroupPhoto_5-20-19_341-PRINT-819x1024.jpg"  width = "60" hight = "60" alt="User Image">
+      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://www-s3-live.kent.edu/s3fs-root/s3fs-public/styles/normal_banner/public/Deweese_0.jpg?itok=WBiVsODU" width = "100" height = "100" alt="User Image">
         <div>
           <p class="app-sidebar__user-name">John Doe</p>
           <p class="app-sidebar__user-designation">Surgeon</p>
@@ -117,8 +117,8 @@
         <li class="treeview"><a class="app-menu__item" href="" data-toggle="treeview"><i class="app-menu__icon fa fa-user" aria-hidden="true"></i>
     <span class="app-menu__label">Profile</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-            <li><a class="treeview-item" href="/AdminCreate"><i class="icon fa fa-user"></i>Profile</a></li>
-            <li><a class="treeview-item" href="/AdminEdit"><i class="icon fa fa-pencil-square-o"></i>Edit Profile</a></li>
+            <li><a class="treeview-item" href="/AdminRead"><i class="icon fa fa-user"></i>Profile</a></li>
+           <!-- <li><a class="treeview-item" href="/AdminEdit/{user_id}"><i class="icon fa fa-pencil-square-o"></i>Edit Profile</a></li>-->
           </ul>
         </li>
 
@@ -126,24 +126,18 @@
   <span class="app-menu__label">Doctors</span><i class="treeview-indicator fa fa-angle-right"></i></a>
  
   <ul class="treeview-menu ">
-            <li><a class="treeview-item" href="dashboardFront/bootstrap-components.blade.php"><i class="icon fa fa-user"></i>Profile</a></li>
-            <li><a class="treeview-item" href="https://fontawesome.com/v4.7.0/icons/" target="_blank" rel="noopener"><i class="icon fa fa-pencil-square-o"></i>Edit Profile</a></li>
+    
+  @if (Auth::user()->type == 'Doctor') 
+            <li><a class="treeview-item" href="/DoctorCreate"><i class="icon fa fa-user"></i>Profile</a></li>
+  @endif
+            <li><a class="treeview-item" href="/DoctorRead" target="_blank" rel="noopener"><i class="icon fa fa-pencil-square-o"></i>View</a></li>
+            <li><a class="treeview-item" href="/DoctorEdit/{id}" target="_blank" rel="noopener"><i class="icon fa fa-pencil-square-o"></i>Edit Profile</a></li>
             <li><a class="treeview-item" href="dashboardFront/ui-cards.blade.php"><i class="icon fa fa-calendar"></i> Appointments</a></li>
             <li><a class="treeview-item" href="dashboardFront/widgets.blade.php"><i class="icon fa fa-file"></i> Visits</a></li>
           </ul>
         </li>
 
-        <li class="treeview " >
         
-          <a class="app-menu__item" href="#" data-toggle="treeview">
-            <i class="app-menu__icon fa fa-th-list"></i>
-            <span class="app-menu__label">Tables</span>
-            <i class="treeview-indicator fa fa-angle-right"></i></a>
-          <ul class="treeview-menu ">
-            <li><a class="treeview-item" href="/d"><i class="icon fa fa-circle-o"></i> Basic Tables</a></li>
-            <li><a class="treeview-item" href="https://fontawesome.com/v4.7.0/icons/"><i class="icon fa fa-circle-o"></i> Data Tables</a></li>
-          </ul>
-        </li>
 
         <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-wheelchair " aria-hidden="true"></i><span class="app-menu__label">Patients</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
@@ -165,10 +159,17 @@
 
         <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-file" aria-hidden="true"></i></i><span class="app-menu__label">Specialties</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-            <li><a class="treeview-item" href="/SpecCreate"><i class="icon fa fa-circle-o"></i>Specialties</a></li>
-            <li><a class="treeview-item" href="https://fontawesome.com/v4.7.0/icons/" target="_blank" rel="noopener"><i class="icon fa fa-circle-o"></i> Font Icons</a></li>
-            <li><a class="treeview-item" href="dashboardFront/index.blade.php"><i class="icon fa fa-circle-o"></i> Cards</a></li>
-            <li><a class="treeview-item" href="dashboardFront/index.blade.php"><i class="icon fa fa-circle-o"></i> Widgets</a></li>
+            <li><a class="treeview-item" href="/SpecCreate"><i class="icon fa fa-plus"></i>Add Speciality</a></li>
+            <li><a class="treeview-item" href="/SpecRead" target="_blank" rel="noopener"><i class="icon fa fa-file"></i> The Specialties</a></li>
+         
+          </ul>
+        </li>
+
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-calendar-check-o" aria-hidden="true"></i></i><span class="app-menu__label">Appointments</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+            <li><a class="treeview-item" href="/AppCreate"><i class="icon fa fa-plus"></i>Add Appointments</a></li>
+            <li><a class="treeview-item" href="/AppRead" target="_blank" rel="noopener"><i class="icon fa fa-clock-o"></i> The Appintments</a></li>
+         
           </ul>
         </li>
 
