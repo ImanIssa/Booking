@@ -79,7 +79,7 @@ http://www.tooplate.com/view/2098-health
                <!-- MENU LINKS -->
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                         <li><a href="#top" class="smoothScroll">Home</a></li>
+                         <li><a href="/PatientsCreate" class="smoothScroll">Home</a></li>
                          <li><a href="#about" class="smoothScroll">About Us</a></li>
                          <li><a href="#team" class="smoothScroll">Doctors</a></li>
                          <li><a href="#news" class="smoothScroll">News</a></li>

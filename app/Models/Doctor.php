@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Appointment;
+use App\Models\Visit;
+use App\Models\Speciality;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,11 +14,16 @@ class Doctor extends Model
     
     public function speciality(){
 
-        return $this->belongsTo(Seciality::class , 'specility_id' , 'id')->withDefault(['name'=> 'no select']);
+        return $this->belongsTo(Speciality::class , 'specility_id' , 'id')->withDefault(['name'=> 'no select']);
 }
 
 public function visit(){
 
-    return $this->belongsTo(Visit::class , 'doctor_id' , 'id');
+    return $this->HasOne(Visit::class , 'doctor_id' , 'id');
+}
+
+public function appointments(){
+
+    return $this->hasMany(Appointment::class , 'doctors_id' , 'id');
 }
 }

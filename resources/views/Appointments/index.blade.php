@@ -11,7 +11,7 @@
   <thead class="thead-dark">
      <th scope="col">Apoointment No.</th>
      <th scope="col">Apoointment</th>
-     <th scope="col">Doctor ID</th>
+     <th scope="col">Doctor Name</th>
      <th scope="col">Date</th>
      <th scope="col">Day</th>
      <th scope="col">Status</th>
@@ -25,7 +25,7 @@
       
 <td> {{$app->id}}</td>
       <td>{{$app->appointment}} </td>
-      <td> {{$app->doctors_id}}</td>
+      <td> {{$app->doctor->name}}</td>
       <td> {{$app->date}}</td>
       <td> {{$app->day}}</td>
       <td style="font-weight:900;"> {{$app->status}} </td>

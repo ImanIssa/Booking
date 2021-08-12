@@ -3,13 +3,13 @@
 <form action=""  method='post' enctype="multipart/form-data">
 
 @csrf
-<input type= "hidden" name="_method"  value = "put">
+
     <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
-                    <img src="https://affiliatedderm.com/wp-content/uploads/2019/06/Affiliated-Dermatologists_GroupPhoto_5-20-19_341-PRINT-819x1024.jpg" alt="Admin" class="rounded-circle" width="150">
+                    <img src="https://www-s3-live.kent.edu/s3fs-root/s3fs-public/styles/normal_banner/public/Deweese_0.jpg?itok=WBiVsODU" alt="Admin"  class = "rounded-circle" height = "200" width="200">
                     <div class="mt-3">
                       <h4>John Doe</h4>
                       <p class="text-secondary mb-1">Full Stack Developer</p>

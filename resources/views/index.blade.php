@@ -80,6 +80,7 @@ http://www.tooplate.com/view/2098-health
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                          <li><a href="#top" class="smoothScroll">Home</a></li>
+                      @guest  <li><a href="/login" class="smoothScroll">Login</a></li>@endguest
                          <li><a href="#about" class="smoothScroll">About Us</a></li>
                          <li><a href="#team" class="smoothScroll">Doctors</a></li>
                          <li><a href="#news" class="smoothScroll">News</a></li>
@@ -92,7 +93,7 @@ http://www.tooplate.com/view/2098-health
      </section>
 
 
-     <!-- HOME -->
+     <!-- HOME --> 
      <section id="home" class="slider" data-stellar-background-ratio="0.5">
           <div class="container">
                <div class="row">

@@ -6,6 +6,7 @@
 <form action=""  method='post' enctype="multipart/form-data">
     @csrf
     <input type= "hidden" name="_method"  value = "delete">
+  
     <?php if (session()->has('success')) :?>
               <div>
                 <?= session()->get('success') ?>
@@ -52,7 +53,7 @@
       <td>{{$doctors->price}}</td>
       <td>{{$doctors->start_time}}</td>
       <td>{{$doctors->end_time}}</td>
-      <td>{{$doctors->specility_id}}</td>
+      <td>{{$doctors->speciality->name}}</td>
      
       <td><input type="submit" name="a" class="btn btn-danger" formaction="/DoctorDelete/<?= $doctors->id ?>" value="Delete">
     

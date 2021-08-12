@@ -17,10 +17,9 @@ class PatientsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { /* $d = Doctor::all();
-        return view('index' , [
-            'd'=>$d,
-        ]);*/
+    {  $patient = Patient::all();
+        return view('Patients.index' , [
+            'patient'=>$patient,]);
     }
 
     /**

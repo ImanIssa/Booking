@@ -11,16 +11,7 @@
 <table class="table">
 
  <tbody>
- <tr>
-     <th scope="col">Appointment No.</th>
-     <th scope="col"><input type="text" class="form-control @error('name') is-invalid @enderror" name = "id"  value="{{old('id' )}}" >
-        <p class ="invalid-feedback ">
-          @error('name') 
-          {{ $message }} 
-          @enderror 
-        </p>
-   </th>
- </tr>
+
 
  <tr>
      <th scope="col">date</th>
@@ -69,7 +60,7 @@
      <td> 
     <select id=" "  class="form-control @error('email') is-invalid @enderror" name = "status"   value="" >
     <option value=""></option>
- <option value="Booked" name ="status">Booked</option>
+
  <option value="Unbooked"  name ="status">Unbooked</option>
  </select>
      

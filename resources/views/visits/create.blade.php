@@ -6,11 +6,11 @@
                
           <form action="/VisitCreate" method = 'post' >
           @csrf
-        
+          <input type= "hidden" name="patient_id"  value = "{{$patient->id }}">
        
           <div class="col-md-12 col-sm-12">
                                   
-          <div class="col text-right"><h3>{{$patient->name}}<h3> <h3>{{$patient->email}}<h3> </div>
+          <div class="col text-left" ><h3 >Patient Name: {{$patient->name}}<h3>  </div>
 
 
           
@@ -24,20 +24,29 @@
                          </div>
                     </div>
                     <div class="clearfix"></div>
-                    @foreach( $doctors as $doctors)
+                    @foreach( $doctors as $doctor)
                   
 
                     <div class="col-md-4 col-sm-6 ">
                          <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
                         
-                              <img src="{{asset('storage/' . $doctors->image)}}" height="300"  width="400" alt="Doctor image">
+                              <img src="{{asset('storage/' . $doctor->image)}}" height="300"  width="400" alt="Doctor image">
 
                                    <div class="team-info">
-                                   <h3><div class="col text-left">{{$doctors->name}}  </div><h3>
-                                        <p>General Principal</p>
+                                   <h3><div class="col text-left">  <input type= "hidden" name="doctor_id"  value = "{{$doctor->id}} ">{{$doctor->name}} </div><h3>
+                                        
+                                 <div>  <select  class="form-control @error('specility_id') is-invalid @enderror" name = "appo_id"    >
+      <option value="">Select Appointment</option>
+      @foreach($doctor->appointments as $appointment)
+      @if($appointment->status != "Booked")
+  <option value="{{$appointment->id}}"> <?= $appointment->date?>:<?= $appointment->appointment?>  </option>
+  @endif
+  @endforeach
+</select>
+</div>
                                         <div class="team-contact-info">
-                                             <p><button type="submit" class="form-control" id="cf-submit" name="submit" value=<?= $doctors->doctor_id?>>Book an appointment</button></p>
-                                             <p><i class="fa fa-envelope-o"></i> <a href="#">{{$doctors->email}}</a></p>
+                                             <p><button type="submit" class="form-control" id="cf-submit" value=<?= $doctor->doctor_id?>>Book an appointment</button></p>
+                                             <p><i class="fa fa-envelope-o"></i> <a href="#">{{$doctor->email}}</a></p>
                                         </div>
                                         <ul class="social-icon">
                                              <li><a href="#" class="fa fa-linkedin-square"></a></li>

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Doctor;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,7 +9,7 @@ class Speciality extends Model
 {
     use HasFactory;
 protected $table = "specilties";
-    protected $fillable = ['name'];
+    protected $fillable = ['name','id'];
    
         public function doctor(){
 

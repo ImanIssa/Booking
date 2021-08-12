@@ -18,11 +18,15 @@ class VisitsController extends Controller
      */
     public function index()
     {
-        $doctors = Doctor::all();
+        /*$doctors = Doctor::all();
        return view ('visits.create' ,[
         'doctors'=>$doctors,
         ]
-    );
+    );*/
+
+    $visit = Visit::all();
+    return view ('visits.index' ,[
+        'visit'=>$visit,]);
     }
 
     /**
@@ -50,18 +54,18 @@ class VisitsController extends Controller
     public function store(Request $request )
     { $visit = new Visit();
       //  dd($visit);
-   //   $patient = Patient::findOrFail($id) ;
+   // $patient = Patient::findOrFail($id) ;
       $visit->doctor_id = $request->post('doctor_id');
       $visit->appo_id= $request->post('appo_id');
       $visit->patient_id= $request->post('patient_id');
 
-     /*$appointment = Appointment::find($request->post('appo_id'));
-      $appointment->state = 'Booked';
-      $appointment->save();*/
-  //    $visit = Patient::find($visit->patient_id)->patient()->get();
+    $appointment = Appointment::find($request->post('appo_id'));
+      $appointment->status = 'Booked';
+      $appointment->save();
+   //  $visit = Patient::find($visit->patient_id)->patient()->get();
    //dd($visit);
       $visit->save();
-     // return redirect();
+     return redirect("/PatientsCreate");
     }
 
     /**

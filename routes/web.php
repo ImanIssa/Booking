@@ -81,8 +81,8 @@ Route::put('/DoctorEdit/{id}', [ DoctorsController::class , 'update']);
 
 
 /* ------------------------------------------------- Patients Routes -------------------------------------------------*/
-Route::get('/PatientsCreate', [ PatientsController::class , 'create'])->name('PatientsCreate')->middleware('auth');
-Route::get('/PatientsRead', [ PatientsController::class , 'index'])->name('PatientsRead')->middleware('auth');
+Route::get('/PatientsCreate', [ PatientsController::class , 'create'])->name('PatientsCreate');
+Route::get('/PatientsRead', [ PatientsController::class , 'index'])->name('PatientsRead');
 Route::post('/PatientsCreate', [ PatientsController::class , 'store'])->name('PatientsStore');
 //Route::get('/AdminEdit/{user_id}', [ PatientsController::class ,'edit']);
 //Route::put('/AdminEdit/{user_id}', [ PatientsController::class , 'update']);
@@ -108,7 +108,7 @@ Route::put('/AppEdit/{user_id}', [ AppointmentsController::class , 'update']);
 
 /* ------------------------------------------------- Visits Routes -------------------------------------------------*/
 Route::get('/VisitCreate', [ VisitsController::class , 'create'])->name('VisitCreate')->middleware('auth');
-//Route::get('/AdminRead', [ AdminController::class , 'index'])->name('AdminRead')->middleware('auth');
+Route::get('/VisitRead', [ VisitsController::class , 'index'])->name('AdminRead')->middleware('auth');
 Route::post('/VisitCreate', [VisitsController::class , 'store'])->name('VisitStore');
 Route::delete('/SpecDelete/{id}', [ SpecialtiesController::class ,'destroy']);
 //Route::get('/AdminEdit/{user_id}', [ AdminController::class ,'edit']);

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Visit;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,7 +18,7 @@ class Patient extends Model
 
 public function visit(){
 
-    return $this->belongsTo(Visit::class , 'patient_id' , 'id');
+    return $this->HasOne(Visit::class , 'patient_id' , 'id');
 }
 
 }
